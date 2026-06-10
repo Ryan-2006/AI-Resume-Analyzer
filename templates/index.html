@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Analyzer</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🚀 AI Resume Analyzer</h1>
+
+    <div class="upload-box">
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <input
+            type="file"
+            name="resume"
+            accept=".pdf"
+            required>
+
+            <br>
+
+            <button type="submit">
+                Analyze Resume
+            </button>
+
+        </form>
+
+    </div>
+
+{% if result %}
+
+<div class="result">
+
+    <h2>📄 Resume Analysis Report</h2>
+
+    <div class="card">
+        <strong>Email:</strong>
+        {{ result.email }}
+    </div>
+
+    <div class="card">
+        <strong>Phone:</strong>
+        {{ result.phone }}
+    </div>
+
+    <div class="card">
+
+        <strong>Skills Detected:</strong>
+
+        <div class="skills">
+
+            {% for skill in result.skills %}
+
+            <span class="skill">
+                {{ skill }}
+            </span>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <strong>ATS Score</strong>
+
+        <div class="score-container">
+
+            <div class="progress-bar">
+
+                <div
+                class="progress"
+                style="width: {{ result.score }}%;">
+
+                    {{ result.score }}%
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
