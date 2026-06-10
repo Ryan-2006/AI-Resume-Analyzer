@@ -2,7 +2,7 @@
 
 ## Preview
 
-![Project Screenshot](screenshot.png)
+![Project Screenshot](Screenshot.png)
 
 An AI-powered Resume Analyzer built using Flask and Python.
 
