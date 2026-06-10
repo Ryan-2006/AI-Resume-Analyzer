@@ -1,5 +1,9 @@
 # AI Resume Analyzer
 
+## Preview
+
+![Project Screenshot](screenshot.png)
+
 An AI-powered Resume Analyzer built using Flask and Python.
 
 ## Features
